@@ -105,20 +105,19 @@ namespace Laboratorio_4_OOP_201902
         
         //Metodos
         public void DrawCard(int cardId = 0)
-        {
-         
-           
+        { if (deck.Cards[cardId] == typeof(CombatCard))
+            {
+                CombatCard CardToHand = deck.Cards[cardId];
+                hand.AddCard(CardToHand);
+                deck.Cards.RemoveAt(cardId);
+            }
 
-           
-            /*
-            1- Definir si la carta a robada del mazo es CombatCard o SpecialCard
-            2- Luego deberá agregar la carta robada al mazo. En este paso debe respetar el tipo por referencia, para esto:
-                2.1- Asigne una variable a la carta robada del mazo, ejemplo, CombatCard card = deck.Cards[cardId]
-                2.2- Cree una CombatCard o SpecialCard (dependiendo del caso) con los valores de la carta del mazo.
-                2.3- Agregue la nueva carta a la mano
-            Elimine la carta del mazo.
-            Hint: Utilice los métodos ya creados en Hand y Deck (AddCard y DestroyCard), no se preocupe de la implementacion de estos aun.*/
-            throw new NotImplementedException();
+        else if (deck.Cards[cardId] == typeof(SpecialCard))
+            {
+                SpecialCard CardToHand = deck.Cards[cardId];
+                hand.AddCard(CardToHand);
+                deck.Cards.RemoveAt(cardId);
+            }
         }
         public void PlayCard(int cardId, EnumType buffRow = EnumType.None)
         {
