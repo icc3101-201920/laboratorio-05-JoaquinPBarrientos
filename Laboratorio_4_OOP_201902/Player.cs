@@ -102,10 +102,14 @@ namespace Laboratorio_4_OOP_201902
                 this.captain = value;
             }
         }
-
+        
         //Metodos
         public void DrawCard(int cardId = 0)
         {
+         
+           
+
+           
             /*
             1- Definir si la carta a robada del mazo es CombatCard o SpecialCard
             2- Luego deberá agregar la carta robada al mazo. En este paso debe respetar el tipo por referencia, para esto:
